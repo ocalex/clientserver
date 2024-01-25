@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include <QStyleFactory>
 #include "database.h"
 #include <QApplication>
 #include <QSysInfo>
@@ -10,6 +10,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    a.setWindowIcon(QIcon("./icon.png"));
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+
 
     database *data = new database();
 

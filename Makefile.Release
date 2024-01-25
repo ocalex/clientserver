@@ -614,6 +614,7 @@ release/moc_autorisation.cpp: autorisation.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDebug \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		apps.h \
+		insert_user.h \
 		list_users.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.2.4/mingw_64/bin/moc.exe
@@ -773,6 +774,7 @@ release/moc_insert_user.cpp: insert_user.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QCryptographicHash \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcryptographichash.h \
+		list_users.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.2.4/mingw_64/bin/moc.exe
 	C:\Qt\6.2.4\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/aochapov/Documents/clientserver/release/moc_predefs.h -IC:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -IC:/Users/aochapov/Documents/clientserver -IC:/Qt/6.2.4/mingw_64/include -IC:/Qt/6.2.4/mingw_64/include/QtWidgets -IC:/Qt/6.2.4/mingw_64/include/QtGui -IC:/Qt/6.2.4/mingw_64/include/QtNetwork -IC:/Qt/6.2.4/mingw_64/include/QtCore5Compat -IC:/Qt/6.2.4/mingw_64/include/QtSql -IC:/Qt/6.2.4/mingw_64/include/QtCore -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include insert_user.h -o release\moc_insert_user.cpp
@@ -1271,7 +1273,6 @@ release/moc_mainwindow.cpp: mainwindow.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		apps.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
-		list_users.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.2.4/mingw_64/bin/moc.exe
 	C:\Qt\6.2.4\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/aochapov/Documents/clientserver/release/moc_predefs.h -IC:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -IC:/Users/aochapov/Documents/clientserver -IC:/Qt/6.2.4/mingw_64/include -IC:/Qt/6.2.4/mingw_64/include/QtWidgets -IC:/Qt/6.2.4/mingw_64/include/QtGui -IC:/Qt/6.2.4/mingw_64/include/QtNetwork -IC:/Qt/6.2.4/mingw_64/include/QtCore5Compat -IC:/Qt/6.2.4/mingw_64/include/QtSql -IC:/Qt/6.2.4/mingw_64/include/QtCore -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include mainwindow.h -o release\moc_mainwindow.cpp
@@ -2157,6 +2158,7 @@ release/autorisation.o: autorisation.cpp autorisation.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDebug \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		apps.h \
+		insert_user.h \
 		list_users.h \
 		ui_autorisation.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QAbstractButton \
@@ -2486,6 +2488,7 @@ release/insert_user.o: insert_user.cpp insert_user.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QCryptographicHash \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcryptographichash.h \
+		list_users.h \
 		ui_insert_user.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QAbstractButton \
@@ -2524,6 +2527,8 @@ release/insert_user.o: insert_user.cpp insert_user.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtGui/qpen.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QRadioButton \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qradiobutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\insert_user.o insert_user.cpp
@@ -2679,7 +2684,62 @@ release/list_users.o: list_users.cpp list_users.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtSql/qsqlerror.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
-		ui_list_users.h
+		ui_list_users.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/QVariant \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QAbstractButton \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qicon.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QApplication \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qeventloop.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qfuture.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qmutex.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qresultstore.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qthread.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qrunnable.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qexception.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qpromise.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QDialogButtonBox \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QHeaderView \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qheaderview.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qvalidator.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qpen.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QTableWidget \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qtablewidget.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qtableview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\list_users.o list_users.cpp
 
 release/main.o: main.cpp mainwindow.h \
@@ -3021,7 +3081,6 @@ release/main.o: main.cpp mainwindow.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		apps.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
-		list_users.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QApplication \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
@@ -3030,7 +3089,8 @@ release/main.o: main.cpp mainwindow.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QSysInfo \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QSettings \
 		autorisation.h \
-		insert_user.h
+		insert_user.h \
+		list_users.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -3372,7 +3432,6 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		apps.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
-		list_users.h \
 		ui_mainwindow.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QApplication \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
@@ -3393,6 +3452,10 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
 		../../../../Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
