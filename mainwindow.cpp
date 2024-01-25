@@ -201,6 +201,10 @@ void MainWindow::slotrecom(){
 
     db->recom();
 }
+void MainWindow::deleterule(){
+
+    db->delete_rule(name);
+}
 
 
 

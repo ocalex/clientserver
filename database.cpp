@@ -311,16 +311,17 @@ bool database::checktab(const QString &data){
  void database::clean(){
 
      QSqlQuery query;
-     query.prepare("DROP TABLE DEVICE");
+     query.prepare("DELETE TABLE DEVICE");
      query.exec();
 
      QSqlQuery que;
-     que.prepare("DROP TABLE DEVICE_APPS");
+     que.prepare("DELETE TABLE DEVICE_APPS");
      que.exec();
 
      create_database();
 
  }
+
  void database::deleteline(const QString &data){
 
         QSqlQuery query;
@@ -440,7 +441,7 @@ bool database::checktab(const QString &data){
  void database::delete_user(const QString &data){
 
      qDebug()<<"login"<<data;
- ;
+
       QSqlQuery query;
       query.prepare("DELETE FROM USERS WHERE login=(:login)");
       query.bindValue(":login", data);
@@ -454,7 +455,26 @@ bool database::checktab(const QString &data){
             }
                       }
 
-      else { qDebug()<<"Not delete this user";}
+      else { qDebug()<<"Not delete this user"; }
 
 
  }
+ void database::delete_rule(const QString &name){
+
+     QSqlQuery query;
+     query.prepare("DELETE FROM RULES WHERE name=(:name)");
+     query.bindValue(":name", name);
+
+
+     if(query.exec()){
+         if (query.next())
+           {
+             qDebug()<<"delete this rule";
+
+           }
+                     }
+
+     else { qDebug()<<"Not delete this rule"; }
+
+ }
+

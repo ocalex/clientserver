@@ -43,6 +43,7 @@ public:
         QObject::connect(buttonBox, &QDialogButtonBox::rejected, apps, qOverload<>(&QDialog::reject));
         QObject::connect(apps, SIGNAL(opened(QString)), textEdit, SLOT(append(QString)));
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, textEdit, qOverload<>(&QTextEdit::clear));
+        QObject::connect(apps, &QDialog::finished, textEdit, qOverload<>(&QTextEdit::clear));
 
         QMetaObject::connectSlotsByName(apps);
     } // setupUi

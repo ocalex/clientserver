@@ -106,6 +106,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>apps</sender>
+   <signal>finished(int)</signal>
+   <receiver>textEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>413</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>opened(QString)</signal>

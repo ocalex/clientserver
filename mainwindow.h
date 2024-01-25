@@ -60,6 +60,7 @@ public slots:
     void slotrecom();
 
     void setrule();
+    void deleterule();
 
 
 

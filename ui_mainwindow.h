@@ -43,6 +43,7 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QPushButton *pushButton_6;
+    QPushButton *pushButton_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,7 +61,7 @@ public:
         lineEdit->setGeometry(QRect(20, 400, 221, 22));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(20, 440, 221, 101));
+        pushButton_3->setGeometry(QRect(20, 440, 221, 81));
         tableWidget = new QTableWidget(centralwidget);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(20, 10, 1031, 381));
@@ -78,31 +79,34 @@ public:
         pushButton_5->setGeometry(QRect(410, 490, 101, 41));
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(550, 440, 113, 22));
+        lineEdit_2->setGeometry(QRect(532, 440, 161, 22));
         lineEdit_3 = new QLineEdit(centralwidget);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(680, 440, 113, 22));
+        lineEdit_3->setGeometry(QRect(710, 440, 113, 22));
         lineEdit_4 = new QLineEdit(centralwidget);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(810, 440, 113, 22));
+        lineEdit_4->setGeometry(QRect(832, 440, 91, 22));
         lineEdit_5 = new QLineEdit(centralwidget);
         lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-        lineEdit_5->setGeometry(QRect(940, 440, 113, 22));
+        lineEdit_5->setGeometry(QRect(952, 440, 101, 22));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(550, 420, 49, 16));
+        label->setGeometry(QRect(530, 420, 49, 16));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(680, 420, 49, 16));
+        label_2->setGeometry(QRect(710, 420, 49, 16));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(810, 420, 49, 16));
+        label_3->setGeometry(QRect(830, 420, 49, 16));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(940, 420, 49, 16));
+        label_4->setGeometry(QRect(950, 420, 49, 16));
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(600, 480, 131, 24));
+        pushButton_7 = new QPushButton(centralwidget);
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        pushButton_7->setGeometry(QRect(784, 480, 111, 24));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -125,6 +129,7 @@ public:
         QObject::connect(lineEdit_4, SIGNAL(textChanged(QString)), MainWindow, SLOT(changetabl(QString)));
         QObject::connect(lineEdit_5, SIGNAL(textChanged(QString)), MainWindow, SLOT(changecolumn(QString)));
         QObject::connect(pushButton_6, SIGNAL(clicked()), MainWindow, SLOT(setrule()));
+        QObject::connect(pushButton_7, SIGNAL(clicked()), MainWindow, SLOT(deleterule()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -142,6 +147,7 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "\320\242\320\260\320\261\320\273\320\270\321\206\320\260", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "\320\220\321\202\321\200\320\270\320\261\321\203\321\202", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\320\270\321\202\321\214 \320\277\321\200\320\260\320\262\320\270\320\273\320\276", nullptr));
+        pushButton_7->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\277\321\200\320\260\320\262\320\270\320\273\320\276", nullptr));
     } // retranslateUi
 
 };

@@ -38,6 +38,7 @@ public:
     void recom();
     int checkuser(const QStringList &data);
     void delete_user(const QString &data);
+    void delete_rule(const QString &name);
 
 
 
