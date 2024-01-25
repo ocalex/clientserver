@@ -1,0 +1,14 @@
+release/apps.o
+release/autorisation.o
+release/database.o
+release/insert_user.o
+release/list_users.o
+release/main.o
+release/mainwindow.o
+release/server.o
+release/moc_apps.o
+release/moc_autorisation.o
+release/moc_insert_user.o
+release/moc_list_users.o
+release/moc_mainwindow.o
+release/moc_server.o

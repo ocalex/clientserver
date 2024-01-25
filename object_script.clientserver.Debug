@@ -1,0 +1,14 @@
+debug/apps.o
+debug/autorisation.o
+debug/database.o
+debug/insert_user.o
+debug/list_users.o
+debug/main.o
+debug/mainwindow.o
+debug/server.o
+debug/moc_apps.o
+debug/moc_autorisation.o
+debug/moc_insert_user.o
+debug/moc_list_users.o
+debug/moc_mainwindow.o
+debug/moc_server.o

@@ -1,0 +1,66 @@
+#include "database.h"
+
+database::database()
+{
+    db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName(QDir::currentPath()+QString("/dev.db"));
+
+
+    db.setHostName("localhost");
+
+    qDebug() <<QDir::currentPath()+QString("/dev.db");
+    qDebug() <<"open? "<< db.open();
+    QSqlQuery query;
+        if(!query.exec( "CREATE TABLE " "devices" " ("
+                                "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+
+                               "device"   " VARCHAR(300)    NOT NULL"
+                            " )"
+                      )){
+ // "name"      " VARCHAR(9)            NOT NULL,"
+            qDebug() << query.lastError().text();
+}
+
+
+
+// https://evileg.com/ru/post/62/#header_database.h
+
+
+//insert("lalalalal");
+
+   QSqlQuery qu("SELECT * FROM devices");
+   int idmess = qu.record().indexOf("device");
+   while (qu.next())
+   {
+
+      QString mess = qu.value(idmess).toString();
+      qDebug() << mess;
+   }
+
+
+  db.close();
+
+}
+
+ void database::insert(QString m){
+
+
+       // you should check if args are ok first...
+       QSqlQuery q;
+       q.prepare("INSERT INTO devices (device) VALUES (:device)");
+       q.bindValue(":device", m);
+       if(q.exec())
+       {
+           qDebug() <<  true;
+       }
+       else
+       {
+            qDebug() << "addPerson error:"
+                     << q.lastError();
+       }
+
+
+
+
+}
