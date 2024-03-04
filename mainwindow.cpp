@@ -83,7 +83,7 @@ void MainWindow::slotconec(){
         QString cd = QDate::currentDate().toString() +" "+ QTime::currentTime().toString();;
 
 
-        QStringList list1 = { "*", tcp, cd , "*", "*", "*", "*", "*", "App1", "App2"};
+        QStringList list1 = { "*", tcp, cd , "*", "*", "*", "*", "*", "*"};
 
         db->insert(list1);
         this->filltable();

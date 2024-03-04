@@ -54,7 +54,7 @@ public:
         MainWindow->setEnabled(true);
         MainWindow->resize(1066, 600);
         MainWindow->setContextMenuPolicy(Qt::CustomContextMenu);
-        MainWindow->setIconSize(QSize(55, 55));
+        MainWindow->setIconSize(QSize(198, 198));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         lineEdit = new QLineEdit(centralwidget);

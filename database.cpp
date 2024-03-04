@@ -127,7 +127,8 @@ void database::insert(const QStringList &data){
     qDebug()<<"before query";
 
 
-     if(!this->checktab(data[1])){
+    if(!this->checktab(data[1])){
+
 
 
     QSqlQuery query;
@@ -156,13 +157,39 @@ void database::insert(const QStringList &data){
 
 
        this->insert_apps(data);
+
+
+ }
+
+   else{ this->refresh_data(data);}
+
+
 }
 
+void database::refresh_data(const QStringList &data){
 
+    QSqlQuery que;
+    que.prepare("UPDATE  DEVICE  SET DEVICE_DATA= (:DEVICE_DATA) WHERE DEVICE_IP = (:DEVICE_IP)");
+
+    que.bindValue(":DEVICE_DATA",          data[2]);
+
+    que.bindValue(":DEVICE_IP",          data[1]);
+
+    if(que.exec())
+    {
+        que.next();
+        qDebug()<<"reshers data exec" <<  true;
+    }
+    else
+    {
+         qDebug() << "data mistake  "      << que.lastError();
+    }
 
 }
+
 
 void database::insert_apps(const QStringList &dat){
+
 
     qDebug()<<"insert_apps_begin";
 
@@ -181,10 +208,12 @@ void database::insert_apps(const QStringList &dat){
 
 
 
-   for(unsigned int i = 7; i < dat.size(); ++i ){
 
-       QSqlQuery qu;
+   for(unsigned int i = 7; i < dat.size(); ++i )    {
 
+
+
+        QSqlQuery qu;
 
       qu.prepare("INSERT INTO  DEVICE_APPS (DEVICE_ID, DEVICE_APP) VALUES(:DEVICE_ID, :DEVICE_APP)") ;
 
@@ -206,11 +235,12 @@ void database::insert_apps(const QStringList &dat){
 
 
 
-    }
+                                        }
+
+
 
 
 }
-
 void database::insert_user(const QStringList &data, bool ad){
 
     qDebug()<<"before query user";
@@ -311,11 +341,11 @@ bool database::checktab(const QString &data){
  void database::clean(){
 
      QSqlQuery query;
-     query.prepare("DELETE TABLE DEVICE");
+     query.prepare("DROP TABLE DEVICE");
      query.exec();
 
      QSqlQuery que;
-     que.prepare("DELETE TABLE DEVICE_APPS");
+     que.prepare("DROP TABLE DEVICE_APPS");
      que.exec();
 
      create_database();
@@ -328,15 +358,30 @@ bool database::checktab(const QString &data){
         query.prepare("DELETE FROM DEVICE WHERE DEVICE_USER = (:data)");
         query.bindValue(":data", data);
 
+        if(query.exec()){
 
-
-
-            qDebug() << "removeDevice error:"
-                     << query.lastError();
+            qDebug() << "Delete exec";
+        }
+        else;
+             qDebug() << "don't delete:" << query.lastError();
 
 
  }
+void database::delete_ip(const QString &ip){
 
+    QSqlQuery query;
+    query.prepare("DELETE FROM DEVICE WHERE DEVICE_IP = (:ip)");
+    query.bindValue(":ip", ip);
+
+    if(query.exec()){
+
+        qDebug() << "Delete exec";
+    }
+    else;
+         qDebug() << "don't delete:" << query.lastError();
+
+
+}
  QString database::getapps(const int row){
 
      const QString r = QString::number(row);
@@ -437,7 +482,38 @@ bool database::checktab(const QString &data){
       else { qDebug()<<"Not has this user";}
 
       return 0;                             }
+int database::checkdata(const int dev_id, const QString app){
 
+    qDebug()<<"dev_id"<<dev_id;
+    qDebug()<<"dec_app"<<app;
+
+
+
+     QSqlQuery query;
+     query.prepare("SELECT DEVICE_ID, DEVICE_APP FROM DEVICE_APPS WHERE DEVICE_ID=(:DEVICE_ID) AND DEVICE_APP=(:DEVICE_APP)");
+     query.bindValue(":DEVICE_ID", dev_id);
+     query.bindValue(":DEVICE_APP", app);
+
+
+     if(query.exec()){
+         if (query.next())
+           {
+             qDebug()<<"has this app";
+
+             if(query.value(1).toInt())  return 2;
+
+             return 1;
+           }
+                     }
+
+     else { qDebug()<<"Has not this app";}
+
+     return 0;
+
+
+
+
+}
  void database::delete_user(const QString &data){
 
      qDebug()<<"login"<<data;

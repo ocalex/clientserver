@@ -21,8 +21,8 @@
   </property>
   <property name="iconSize">
    <size>
-    <width>55</width>
-    <height>55</height>
+    <width>198</width>
+    <height>198</height>
    </size>
   </property>
   <widget class="QWidget" name="centralwidget">

@@ -39,6 +39,9 @@ public:
     int checkuser(const QStringList &data);
     void delete_user(const QString &data);
     void delete_rule(const QString &name);
+    void delete_ip(const QString &ip);
+    int checkdata(const int dev_id, const QString app);
+    void refresh_data(const QStringList &data);
 
 
 
