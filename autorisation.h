@@ -27,8 +27,6 @@ class autorisation : public QDialog
 public:
     explicit autorisation(database* dat= nullptr, MainWindow* main = nullptr,QWidget *parent = nullptr);
     ~autorisation();
-   // bool getright();
-   // void setright();
 
 public slots:
     void changelogin(QString s);

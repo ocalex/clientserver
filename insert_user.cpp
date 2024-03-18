@@ -61,6 +61,7 @@ void insert_user::insertdata(){
 insert_user::~insert_user()
 {
     delete ui;
+    delete users;
 }
 void insert_user::show_users(){
     users->show();

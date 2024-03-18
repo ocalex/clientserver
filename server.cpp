@@ -9,9 +9,22 @@ Server::Server(database *d, QObject *parent) : QObject(parent)
     connect(server, SIGNAL(newConnection()), SLOT(newConnection()));
     db = d;
 
+    QFile file("ip.txt");
+
+    file.open(QIODevice::ReadOnly);
+
+    QTextStream in(&file);
+
+    const QString line = in.readLine();
+
+    qDebug()<<"txt ip server -" << line;
 
 
-    qDebug() << "Listening:" << server->listen(QHostAddress("192.168.0.93"), 5723 );
+    file.close();
+
+
+
+    qDebug() << "Listening:" << server->listen(QHostAddress(line), 5723 );
 
     qDebug() << server->serverAddress().toString() << server->serverPort();
 
@@ -83,10 +96,8 @@ void Server::readyRead()
                  }
 
 
-
                    qDebug() <<"in database"<< res;
                    db->insert(db->fromstring(res));
-
 
 
 

@@ -16,6 +16,7 @@ autorisation::autorisation(database* dat,MainWindow* main,QWidget *parent) :
 autorisation::~autorisation()
 {
     delete ui;
+    delete insert;
 }
 
 void autorisation::checkuse(){
@@ -33,7 +34,12 @@ void autorisation::checkuse(){
     if(user_right){qDebug()<<"ALL RIGHT";
                  mai->show();}
 
-
+    else{
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Ошибка");
+        msgBox.setText("Неправильное имя пользователя или пароль");
+        msgBox.exec();
+    }
 
     if(user_right == 2){
         qDebug()<<"User right 2";

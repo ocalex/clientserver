@@ -96,11 +96,11 @@ void MainWindow::slotconec(){
 
         strMessage += "Sent icmp message to " + tcp + "\n";
         if (dwRetVal > 1) {
-            strMessage += "Received " + QString::number(dwRetVal) + " icmp message responses \n";
+            strMessage += "Received " + QString::number(dwRetVal) + " icmp message responses ";
             strMessage += "Information from the first response: ";
         }
         else {
-            strMessage += "Received " + QString::number(dwRetVal) + " icmp message response \n";
+            strMessage += "Received " + QString::number(dwRetVal) + " icmp message response ";
             strMessage += "Information from the first response: ";
         }
             strMessage += "Received from ";
@@ -108,10 +108,15 @@ void MainWindow::slotconec(){
             strMessage += "\n";
             strMessage += "Status = " + pEchoReply->Status;
             strMessage += "Roundtrip time = " + QString::number(pEchoReply->RoundTripTime) + " milliseconds \n";
-    } else {
-        strMessage += "Call to IcmpSendEcho failed.\n";
+                        }
+    else {
+        strMessage += "Call to IcmpSendEcho failed. ";
         strMessage += "IcmpSendEcho returned error: ";
         strMessage += QString::number(GetLastError());
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Ошибка");
+        msgBox.setText("Не удается установить соединение");
+        msgBox.exec();
     }
 
     //ui->textEdit->setText(strMessage); // Отображаем информацию о полученных данных
